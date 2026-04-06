@@ -14,6 +14,7 @@ from workers.ai_worker import AIWorker
 from ui.chat_bubble import ChatBubble
 from ui.dialogs import LanguageDialog
 
+from core.conversation import ConversationManager
 from core.language import detect_language
 from utils.text_cleaner import clean_for_tts
 
@@ -25,7 +26,7 @@ class PersonalAssistantUI(QMainWindow):
         super().__init__()
 
         # State
-        self.conversation_history = []
+        self.conversation = ConversationManager(max_turns_for_context=12, persist=True)
         self.current_user_message = ""
         self.user_info = {}
         self.is_listening = False
@@ -260,7 +261,8 @@ class PersonalAssistantUI(QMainWindow):
             if isinstance(widget, ChatBubble):
                 widget.deleteLater()
 
-        self.conversation_history.clear()
+        # start a fresh persisted session on clear
+        self.conversation.clear(new_session=True)
 
     # ---------------- Messaging ---------------- #
 
@@ -281,6 +283,7 @@ class PersonalAssistantUI(QMainWindow):
             self.current_language = detected_lang
             self._sync_lang_combo()
 
+        self.conversation.add_user(message, language=self.current_language)
         self.add_chat_message(message, True)
         self.process_with_ai(message)
 
@@ -289,7 +292,7 @@ class PersonalAssistantUI(QMainWindow):
 
         self.ai_worker = AIWorker(
             message,
-            self.conversation_history,
+            self.conversation.get_recent_pairs(),
             self.user_info,
             self.current_language
         )
@@ -304,9 +307,7 @@ class PersonalAssistantUI(QMainWindow):
         # ✅ moved to utils
         cleaned = clean_for_tts(response, self.current_language)
 
-        self.conversation_history.append(
-            (self.current_user_message, cleaned)
-        )
+        self.conversation.add_assistant(cleaned, language=self.current_language)
 
         self.add_chat_message(cleaned, False)
         self.speak_response(cleaned)
