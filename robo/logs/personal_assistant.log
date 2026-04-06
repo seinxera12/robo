@@ -1,0 +1,56 @@
+2026-04-06 12:16:31 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-06 12:16:33 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-06 12:16:44 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=fi | normalized=en | text_chars=5
+2026-04-06 12:16:44 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=5 | history_turns=0
+2026-04-06 12:16:44 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=5 | history_turns=0
+2026-04-06 12:16:44 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=0
+2026-04-06 12:16:44 | INFO     | Dummy-1 | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-06 12:16:45 | INFO     | Dummy-1 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-06 12:16:45 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=gemini | model=gemini-2.5-flash | response_chars=32
+2026-04-06 12:16:45 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=32
+2026-04-06 12:16:45 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=32
+2026-04-06 12:16:45 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 12:16:50 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 12:17:41 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=ja | normalized=ja | text_chars=28
+2026-04-06 12:17:41 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=ja | msg_chars=28 | history_turns=1
+2026-04-06 12:17:41 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=ja | user_chars=28 | history_turns=1
+2026-04-06 12:17:41 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=1
+2026-04-06 12:17:41 | INFO     | Dummy-5 | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-06 12:17:44 | INFO     | Dummy-5 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-06 12:17:44 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=gemini | model=gemini-2.5-flash | response_chars=52
+2026-04-06 12:17:44 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=52
+2026-04-06 12:17:44 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=ja | text_chars=52
+2026-04-06 12:17:44 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 12:17:57 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 12:24:29 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=fi | normalized=en | text_chars=5
+2026-04-06 12:24:29 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=5 | history_turns=2
+2026-04-06 12:24:29 | INFO     | Dummy-9 | services.ai_service | ai.generate | start | language=en | user_chars=5 | history_turns=2
+2026-04-06 12:24:29 | INFO     | Dummy-9 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=2
+2026-04-06 12:24:29 | INFO     | Dummy-9 | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-06 12:24:31 | INFO     | Dummy-9 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-06 12:24:31 | INFO     | Dummy-9 | services.ai_service | ai.generate | complete | provider=gemini | model=gemini-2.5-flash | response_chars=32
+2026-04-06 12:24:31 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | success | response_chars=32
+2026-04-06 12:24:31 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | start | language=en | text_chars=32
+2026-04-06 12:24:31 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 12:24:35 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 12:24:44 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=27
+2026-04-06 12:24:44 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=27 | history_turns=3
+2026-04-06 12:24:44 | INFO     | Dummy-13 | services.ai_service | ai.generate | start | language=en | user_chars=27 | history_turns=3
+2026-04-06 12:24:44 | INFO     | Dummy-13 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=3
+2026-04-06 12:24:44 | INFO     | Dummy-13 | google_genai.models | AFC is enabled with max remote calls: 10.
+2026-04-06 12:24:46 | INFO     | Dummy-13 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-06 12:24:46 | INFO     | Dummy-13 | services.ai_service | ai.generate | complete | provider=gemini | model=gemini-2.5-flash | response_chars=732
+2026-04-06 12:24:46 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | success | response_chars=732
+2026-04-06 12:24:46 | INFO     | Dummy-1 | workers.tts_worker | tts_worker | start | language=en | text_chars=672
+2026-04-06 12:24:46 | INFO     | Dummy-1 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 12:25:58 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-06 12:26:00 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-06 12:26:46 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=30
+2026-04-06 12:26:46 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=30 | history_turns=0
+2026-04-06 12:26:46 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=30 | history_turns=0
+2026-04-06 12:26:46 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=0
+2026-04-06 12:26:46 | INFO     | Dummy-1 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-06 12:26:46 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=groq | model=llama-3.1-8b-instant | response_chars=1199
+2026-04-06 12:26:46 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=1199
+2026-04-06 12:26:46 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=1165
+2026-04-06 12:26:46 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
