@@ -294,3 +294,668 @@ requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: 
 2026-04-06 14:58:12 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | start | language=en | text_chars=162
 2026-04-06 14:58:12 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | attempt | backend=gTTS
 2026-04-06 14:58:27 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 16:19:29 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-06 16:19:34 | INFO     | MainThread | core.conversation | conversation.init | session_id=8c2dd327e1ab49da9cbb254048dca236 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\8c2dd327e1ab49da9cbb254048dca236.jsonl | max_turns_for_context=12
+2026-04-06 16:19:34 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-06 16:19:44 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=fi | normalized=en | text_chars=5
+2026-04-06 16:19:44 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=5 | history_turns=0
+2026-04-06 16:19:44 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=5 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 16:19:44 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 16:19:44 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=llama3.1 | context_turns=0
+2026-04-06 16:19:44 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=llama3.1 | language=en | user_chars=5 | history_turns=0
+2026-04-06 16:19:50 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=llama3.1 | response_chars=95
+2026-04-06 16:19:50 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=95
+2026-04-06 16:19:50 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=95
+2026-04-06 16:19:50 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=ja | text_chars=95
+2026-04-06 16:19:50 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 16:20:00 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 16:20:02 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=so | normalized=en | text_chars=10
+2026-04-06 16:20:02 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=10 | history_turns=1
+2026-04-06 16:20:02 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=en | user_chars=10 | history_turns=1 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 16:20:02 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 16:20:02 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=ollama | model=llama3.1 | context_turns=1
+2026-04-06 16:20:02 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | start | model=llama3.1 | language=en | user_chars=10 | history_turns=1
+2026-04-06 16:20:07 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | complete | model=llama3.1 | response_chars=156
+2026-04-06 16:20:07 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=156
+2026-04-06 16:20:07 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=156
+2026-04-06 16:20:07 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=en | text_chars=156
+2026-04-06 16:20:07 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 16:20:22 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 16:20:26 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=ja | normalized=ja | text_chars=5
+2026-04-06 16:20:26 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | thread_start | language=ja | msg_chars=5 | history_turns=2
+2026-04-06 16:20:26 | INFO     | Dummy-9 | services.ai_service | ai.generate | start | language=ja | user_chars=5 | history_turns=2 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 16:20:26 | INFO     | Dummy-9 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 16:20:26 | INFO     | Dummy-9 | services.ai_service | ai.request | provider=ollama | model=llama3.1 | context_turns=2
+2026-04-06 16:20:26 | INFO     | Dummy-9 | services.ollama_service | ollama.generate | start | model=llama3.1 | language=ja | user_chars=5 | history_turns=2
+2026-04-06 16:20:31 | INFO     | Dummy-9 | services.ollama_service | ollama.generate | complete | model=llama3.1 | response_chars=245
+2026-04-06 16:20:31 | INFO     | Dummy-9 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=245
+2026-04-06 16:20:31 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | success | response_chars=245
+2026-04-06 16:20:31 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | start | language=ja | text_chars=245
+2026-04-06 16:20:31 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 16:21:01 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 16:21:57 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=ja | normalized=ja | text_chars=11
+2026-04-06 16:21:57 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | thread_start | language=ja | msg_chars=11 | history_turns=3
+2026-04-06 16:21:57 | INFO     | Dummy-13 | services.ai_service | ai.generate | start | language=ja | user_chars=11 | history_turns=3 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 16:21:57 | INFO     | Dummy-13 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 16:21:57 | INFO     | Dummy-13 | services.ai_service | ai.request | provider=ollama | model=llama3.1 | context_turns=3
+2026-04-06 16:21:57 | INFO     | Dummy-13 | services.ollama_service | ollama.generate | start | model=llama3.1 | language=ja | user_chars=11 | history_turns=3
+2026-04-06 16:22:03 | INFO     | Dummy-13 | services.ollama_service | ollama.generate | complete | model=llama3.1 | response_chars=246
+2026-04-06 16:22:03 | INFO     | Dummy-13 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=246
+2026-04-06 16:22:03 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | success | response_chars=246
+2026-04-06 16:22:03 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | start | language=ja | text_chars=244
+2026-04-06 16:22:03 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 16:22:35 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 16:22:36 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=ja | normalized=ja | text_chars=12
+2026-04-06 16:22:36 | INFO     | Dummy-17 | workers.ai_worker | ai_worker | thread_start | language=ja | msg_chars=12 | history_turns=4
+2026-04-06 16:22:36 | INFO     | Dummy-17 | services.ai_service | ai.generate | start | language=ja | user_chars=12 | history_turns=4 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 16:22:36 | INFO     | Dummy-17 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 16:22:36 | INFO     | Dummy-17 | services.ai_service | ai.request | provider=ollama | model=llama3.1 | context_turns=4
+2026-04-06 16:22:36 | INFO     | Dummy-17 | services.ollama_service | ollama.generate | start | model=llama3.1 | language=ja | user_chars=12 | history_turns=4
+2026-04-06 16:22:42 | INFO     | Dummy-17 | services.ollama_service | ollama.generate | complete | model=llama3.1 | response_chars=198
+2026-04-06 16:22:42 | INFO     | Dummy-17 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=198
+2026-04-06 16:22:42 | INFO     | Dummy-17 | workers.ai_worker | ai_worker | success | response_chars=198
+2026-04-06 16:22:42 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | start | language=ja | text_chars=195
+2026-04-06 16:22:42 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 16:23:11 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 16:28:31 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-06 16:28:33 | INFO     | MainThread | core.conversation | conversation.init | session_id=6bbfd581293a429599be8ae620a8ef73 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\6bbfd581293a429599be8ae620a8ef73.jsonl | max_turns_for_context=12
+2026-04-06 16:28:33 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-06 16:28:46 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=ja | normalized=ja | text_chars=12
+2026-04-06 16:28:46 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=ja | msg_chars=12 | history_turns=0
+2026-04-06 16:28:46 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=ja | user_chars=12 | history_turns=0 | priority=['groq', 'gemini', 'ollama']
+2026-04-06 16:28:46 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-06 16:28:46 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=0
+2026-04-06 16:28:46 | INFO     | Dummy-1 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-06 16:28:46 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=groq | response_chars=20
+2026-04-06 16:28:46 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=20
+2026-04-06 16:28:46 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=ja | text_chars=20
+2026-04-06 16:28:46 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 16:28:52 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 16:29:29 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=ja | normalized=ja | text_chars=12
+2026-04-06 16:29:29 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=ja | msg_chars=12 | history_turns=1
+2026-04-06 16:29:29 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=ja | user_chars=12 | history_turns=1 | priority=['groq', 'gemini', 'ollama']
+2026-04-06 16:29:29 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-06 16:29:29 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=1
+2026-04-06 16:29:29 | INFO     | Dummy-5 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-06 16:29:29 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=groq | response_chars=18
+2026-04-06 16:29:29 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=18
+2026-04-06 16:29:29 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=ja | text_chars=18
+2026-04-06 16:29:29 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 16:29:34 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 17:12:13 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-06 17:12:16 | INFO     | MainThread | core.conversation | conversation.init | session_id=37d7861dfab748f8934dd75f2c8c76bc | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\37d7861dfab748f8934dd75f2c8c76bc.jsonl | max_turns_for_context=12
+2026-04-06 17:12:16 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-06 17:12:42 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-06 17:12:44 | INFO     | MainThread | core.conversation | conversation.init | session_id=ca9d4654fe534e73ad4958f2a45dafe2 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\ca9d4654fe534e73ad4958f2a45dafe2.jsonl | max_turns_for_context=12
+2026-04-06 17:12:44 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-06 17:13:34 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=ja | normalized=ja | text_chars=15
+2026-04-06 17:13:34 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=ja | msg_chars=15 | history_turns=0
+2026-04-06 17:13:34 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=ja | user_chars=15 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 17:13:34 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 17:13:34 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-06 17:13:34 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=ja | user_chars=15 | history_turns=0
+2026-04-06 17:13:52 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=90
+2026-04-06 17:13:52 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=90
+2026-04-06 17:13:52 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=90
+2026-04-06 17:13:52 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=ja | text_chars=90
+2026-04-06 17:13:52 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 17:14:11 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 17:20:34 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=sw | normalized=en | text_chars=9
+2026-04-06 17:20:34 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=9 | history_turns=1
+2026-04-06 17:20:34 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=en | user_chars=9 | history_turns=1 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 17:20:34 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 17:20:34 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=1
+2026-04-06 17:20:34 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=9 | history_turns=1
+2026-04-06 17:20:40 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=76
+2026-04-06 17:20:40 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=76
+2026-04-06 17:20:40 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=76
+2026-04-06 17:20:40 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=en | text_chars=0
+2026-04-06 17:20:40 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 17:20:40 | WARNING  | Dummy-6 | workers.tts_worker | tts_worker | gTTS_failed | No text to speak
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\workers\tts_worker.py", line 76, in run
+    tts = gTTS(text=self.text, lang=gtts_lang, slow=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\gtts\tts.py", line 133, in __init__
+    assert text, "No text to speak"
+           ^^^^
+AssertionError: No text to speak
+2026-04-06 17:20:40 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=pyttsx3
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._code_cache | Could not import comtypes.gen, trying to create it.
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._code_cache | Created comtypes.gen directory: 'D:\ai\projects\personal_assistant\venv\Lib\site-packages\comtypes\gen'
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._code_cache | Writing __init__.py file: 'D:\ai\projects\personal_assistant\venv\Lib\site-packages\comtypes\gen\__init__.py'
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._code_cache | Using writeable comtypes cache directory: 'D:\ai\projects\personal_assistant\venv\Lib\site-packages\comtypes\gen'
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._generate | Could not import comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4: No module named 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4'
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._generate | # Generating comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._generate | # Generating comtypes.gen.SpeechLib
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._generate | Could not import comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0: No module named 'comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0'
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._generate | # Generating comtypes.gen._00020430_0000_0000_C000_000000000046_0_2_0
+2026-04-06 17:20:40 | INFO     | Dummy-6 | comtypes.client._generate | # Generating comtypes.gen.stdole
+2026-04-06 17:20:41 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=pyttsx3
+2026-04-06 17:24:05 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=fi | normalized=en | text_chars=5
+2026-04-06 17:24:05 | INFO     | Dummy-7 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=5 | history_turns=2
+2026-04-06 17:24:05 | INFO     | Dummy-7 | services.ai_service | ai.generate | start | language=en | user_chars=5 | history_turns=2 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 17:24:05 | INFO     | Dummy-7 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 17:24:05 | INFO     | Dummy-7 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=2
+2026-04-06 17:24:05 | INFO     | Dummy-7 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=5 | history_turns=2
+2026-04-06 17:24:19 | INFO     | Dummy-7 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=94
+2026-04-06 17:24:19 | INFO     | Dummy-7 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=94
+2026-04-06 17:24:19 | INFO     | Dummy-7 | workers.ai_worker | ai_worker | success | response_chars=94
+2026-04-06 17:24:19 | INFO     | Dummy-8 | workers.tts_worker | tts_worker | start | language=en | text_chars=0
+2026-04-06 17:24:19 | INFO     | Dummy-8 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 17:24:19 | WARNING  | Dummy-8 | workers.tts_worker | tts_worker | gTTS_failed | No text to speak
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\workers\tts_worker.py", line 76, in run
+    tts = gTTS(text=self.text, lang=gtts_lang, slow=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\gtts\tts.py", line 133, in __init__
+    assert text, "No text to speak"
+           ^^^^
+AssertionError: No text to speak
+2026-04-06 17:24:19 | INFO     | Dummy-8 | workers.tts_worker | tts_worker | attempt | backend=pyttsx3
+2026-04-06 17:24:19 | INFO     | Dummy-8 | workers.tts_worker | tts_worker | success | backend=pyttsx3
+2026-04-06 17:25:02 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-06 17:25:05 | INFO     | MainThread | core.conversation | conversation.init | session_id=05b575c31a404ced81f9163b57c43834 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\05b575c31a404ced81f9163b57c43834.jsonl | max_turns_for_context=12
+2026-04-06 17:25:05 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-06 17:25:18 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=19
+2026-04-06 17:25:18 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=19 | history_turns=0
+2026-04-06 17:25:18 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=19 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 17:25:18 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 17:25:18 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-06 17:25:18 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=19 | history_turns=0
+2026-04-06 17:25:27 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=180
+2026-04-06 17:25:27 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=180
+2026-04-06 17:25:27 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=180
+2026-04-06 17:25:27 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=180
+2026-04-06 17:25:27 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 17:25:45 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 17:33:39 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=ja | normalized=ja | text_chars=10
+2026-04-06 17:33:39 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=ja | msg_chars=10 | history_turns=1
+2026-04-06 17:33:39 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=ja | user_chars=10 | history_turns=1 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 17:33:39 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 17:33:39 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=1
+2026-04-06 17:33:39 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=ja | user_chars=10 | history_turns=1
+2026-04-06 17:33:44 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=64
+2026-04-06 17:33:44 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=64
+2026-04-06 17:33:44 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=64
+2026-04-06 17:33:44 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=ja | text_chars=64
+2026-04-06 17:33:44 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-06 17:33:59 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-06 17:41:55 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-06 17:41:57 | INFO     | MainThread | core.conversation | conversation.init | session_id=2adacbc9b2634cd58e4ac746075efc21 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\2adacbc9b2634cd58e4ac746075efc21.jsonl | max_turns_for_context=12
+2026-04-06 17:41:57 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-06 17:42:16 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=81
+2026-04-06 17:42:16 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=81 | history_turns=0
+2026-04-06 17:42:16 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=81 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-06 17:42:16 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-06 17:42:16 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-06 17:42:16 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=81 | history_turns=0
+2026-04-06 17:42:40 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=2181
+2026-04-06 17:42:40 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=2181
+2026-04-06 17:42:40 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=2181
+2026-04-06 17:42:40 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=2054
+2026-04-06 17:42:40 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 11:18:54 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 11:18:59 | INFO     | MainThread | core.conversation | conversation.init | session_id=5cce7813e0994e2eac1d9cc305afbcaf | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\5cce7813e0994e2eac1d9cc305afbcaf.jsonl | max_turns_for_context=12
+2026-04-07 11:18:59 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 11:19:13 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=40
+2026-04-07 11:19:13 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=40 | history_turns=0
+2026-04-07 11:19:13 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=40 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 11:19:13 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 11:19:13 | WARNING  | Dummy-1 | services.ai_service | ollama.augment | needs_search=yes | skipped | missing BRAVE_SEARCH_API_KEY
+2026-04-07 11:19:13 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-07 11:19:13 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=40 | history_turns=0
+2026-04-07 11:19:25 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=475
+2026-04-07 11:19:25 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=475
+2026-04-07 11:19:25 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=475
+2026-04-07 11:19:25 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=474
+2026-04-07 11:19:25 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 11:20:18 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 11:20:20 | INFO     | MainThread | core.conversation | conversation.init | session_id=41ae54b759eb42b8b9387168b9563413 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\41ae54b759eb42b8b9387168b9563413.jsonl | max_turns_for_context=12
+2026-04-07 11:20:20 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 11:20:43 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=42
+2026-04-07 11:20:43 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=42 | history_turns=0
+2026-04-07 11:20:43 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=42 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 11:20:43 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 11:20:43 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=42
+2026-04-07 11:20:44 | WARNING  | Dummy-1 | services.brave_search | brave_search | request_failed | 422 Client Error:  for url: https://api.search.brave.com/res/v1/web/search?q=hello+whats+the+weather+today+in+kathmandu&count=5
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\brave_search.py", line 78, in brave_web_search_raw
+    resp.raise_for_status()
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 422 Client Error:  for url: https://api.search.brave.com/res/v1/web/search?q=hello+whats+the+weather+today+in+kathmandu&count=5
+2026-04-07 11:20:44 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-07 11:20:44 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=188 | history_turns=0
+2026-04-07 11:20:51 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=583
+2026-04-07 11:20:51 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=583
+2026-04-07 11:20:51 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=583
+2026-04-07 11:20:51 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=580
+2026-04-07 11:20:51 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 11:21:51 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 13:31:49 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 13:31:51 | INFO     | MainThread | core.conversation | conversation.init | session_id=80684a447a6d442d84a0f8feed910dd6 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\80684a447a6d442d84a0f8feed910dd6.jsonl | max_turns_for_context=12
+2026-04-07 13:31:51 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 13:33:11 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=28
+2026-04-07 13:33:11 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=28 | history_turns=0
+2026-04-07 13:33:11 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=28 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 13:33:11 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 13:33:11 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=28
+2026-04-07 13:33:12 | WARNING  | Dummy-1 | services.brave_search | brave_search | request_failed | 422 Client Error:  for url: https://api.search.brave.com/res/v1/web/search?q=What+is+weather+in+Kathmandu&count=5
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\brave_search.py", line 78, in brave_web_search_raw
+    resp.raise_for_status()
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 422 Client Error:  for url: https://api.search.brave.com/res/v1/web/search?q=What+is+weather+in+Kathmandu&count=5
+2026-04-07 13:33:12 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-07 13:33:12 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=174 | history_turns=0
+2026-04-07 13:33:22 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=580
+2026-04-07 13:33:22 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=580
+2026-04-07 13:33:22 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=580
+2026-04-07 13:33:22 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=473
+2026-04-07 13:33:22 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 13:34:04 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 13:41:49 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 13:41:51 | INFO     | MainThread | core.conversation | conversation.init | session_id=859d48f5cdd046eb9b2a27c0074a7ff9 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\859d48f5cdd046eb9b2a27c0074a7ff9.jsonl | max_turns_for_context=12
+2026-04-07 13:41:51 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 13:42:14 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=43
+2026-04-07 13:42:14 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=43 | history_turns=0
+2026-04-07 13:42:14 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=43 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 13:42:14 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 13:42:14 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=43
+2026-04-07 13:42:16 | INFO     | Dummy-1 | services.serper_search | serper_search | ok | query_chars=43 | out_chars=1386
+2026-04-07 13:42:16 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-07 13:42:16 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1551 | history_turns=0
+2026-04-07 13:42:29 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=876
+2026-04-07 13:42:29 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=876
+2026-04-07 13:42:29 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=876
+2026-04-07 13:42:29 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=695
+2026-04-07 13:42:29 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 13:43:36 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 13:47:13 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=23
+2026-04-07 13:47:13 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=23 | history_turns=1
+2026-04-07 13:47:13 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=en | user_chars=23 | history_turns=1 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 13:47:13 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 13:47:13 | INFO     | Dummy-5 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=23
+2026-04-07 13:47:15 | INFO     | Dummy-5 | services.serper_search | serper_search | ok | query_chars=23 | out_chars=1006
+2026-04-07 13:47:15 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=1
+2026-04-07 13:47:15 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1151 | history_turns=1
+2026-04-07 13:47:22 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=364
+2026-04-07 13:47:22 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=364
+2026-04-07 13:47:22 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=364
+2026-04-07 13:47:22 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=en | text_chars=281
+2026-04-07 13:47:22 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 13:47:53 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 13:47:56 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=43
+2026-04-07 13:47:56 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=43 | history_turns=2
+2026-04-07 13:47:56 | INFO     | Dummy-9 | services.ai_service | ai.generate | start | language=en | user_chars=43 | history_turns=2 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 13:47:56 | INFO     | Dummy-9 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 13:47:56 | INFO     | Dummy-9 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=43
+2026-04-07 13:47:58 | INFO     | Dummy-9 | services.serper_search | serper_search | ok | query_chars=43 | out_chars=1557
+2026-04-07 13:47:58 | INFO     | Dummy-9 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=2
+2026-04-07 13:47:58 | INFO     | Dummy-9 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1722 | history_turns=2
+2026-04-07 13:48:09 | INFO     | Dummy-9 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=748
+2026-04-07 13:48:09 | INFO     | Dummy-9 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=748
+2026-04-07 13:48:09 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | success | response_chars=748
+2026-04-07 13:48:09 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | start | language=en | text_chars=537
+2026-04-07 13:48:09 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 13:49:04 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 13:50:15 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=25
+2026-04-07 13:50:15 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=25 | history_turns=3
+2026-04-07 13:50:15 | INFO     | Dummy-13 | services.ai_service | ai.generate | start | language=en | user_chars=25 | history_turns=3 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 13:50:15 | INFO     | Dummy-13 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 13:50:15 | INFO     | Dummy-13 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=25
+2026-04-07 13:50:18 | INFO     | Dummy-13 | services.serper_search | serper_search | ok | query_chars=25 | out_chars=1447
+2026-04-07 13:50:18 | INFO     | Dummy-13 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=3
+2026-04-07 13:50:18 | INFO     | Dummy-13 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1594 | history_turns=3
+2026-04-07 13:50:37 | INFO     | Dummy-13 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=1868
+2026-04-07 13:50:37 | INFO     | Dummy-13 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=1868
+2026-04-07 13:50:37 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | success | response_chars=1868
+2026-04-07 13:50:37 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | start | language=en | text_chars=1348
+2026-04-07 13:50:37 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 13:52:47 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 13:57:07 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=54
+2026-04-07 13:57:07 | INFO     | Dummy-17 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=54 | history_turns=4
+2026-04-07 13:57:07 | INFO     | Dummy-17 | services.ai_service | ai.generate | start | language=en | user_chars=54 | history_turns=4 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 13:57:07 | INFO     | Dummy-17 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 13:57:07 | INFO     | Dummy-17 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=54
+2026-04-07 13:57:09 | INFO     | Dummy-17 | services.serper_search | serper_search | ok | query_chars=54 | out_chars=1410
+2026-04-07 13:57:09 | INFO     | Dummy-17 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=4
+2026-04-07 13:57:09 | INFO     | Dummy-17 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1586 | history_turns=4
+2026-04-07 13:57:13 | ERROR    | Dummy-17 | services.ollama_service | ollama.generate | request_failed | 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\ollama_service.py", line 53, in generate
+    resp.raise_for_status()
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+2026-04-07 13:57:13 | WARNING  | Dummy-17 | services.ai_service | ai.generate | provider_failed | provider=ollama | error=500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 123, in generate
+    text = self._call_provider(provider, message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 59, in _call_provider
+    return self._ollama_with_search_augment(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 106, in _ollama_with_search_augment
+    return self._ollama_plain(augmented_message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 69, in _ollama_plain
+    text = ollama_service.generate(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ollama_service.py", line 53, in generate
+    resp.raise_for_status()
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: http://localhost:11434/api/chat
+2026-04-07 13:57:13 | INFO     | Dummy-17 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-07 13:57:13 | INFO     | Dummy-17 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=4 | tools=web_search
+2026-04-07 13:57:13 | INFO     | Dummy-17 | services.ai_service | ai.groq | tool_round | round=1 | max=4
+2026-04-07 13:57:13 | INFO     | Dummy-17 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 13:57:14 | WARNING  | Dummy-17 | services.brave_search | brave_search | request_failed | 422 Client Error:  for url: https://api.search.brave.com/res/v1/web/search?q=iran+US+conflict+latest+news+2026&count=5
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\brave_search.py", line 78, in brave_web_search_raw
+    resp.raise_for_status()
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 422 Client Error:  for url: https://api.search.brave.com/res/v1/web/search?q=iran+US+conflict+latest+news+2026&count=5
+2026-04-07 13:57:14 | INFO     | Dummy-17 | services.ai_service | ai.tool | provider=groq | tool=web_search | query_chars=33 | result_chars=11
+2026-04-07 13:57:14 | INFO     | Dummy-17 | services.ai_service | ai.groq | tool_round | round=2 | max=4
+2026-04-07 13:57:15 | INFO     | Dummy-17 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 13:57:15 | INFO     | Dummy-17 | services.ai_service | ai.generate | complete | provider=groq | response_chars=806
+2026-04-07 13:57:15 | INFO     | Dummy-17 | workers.ai_worker | ai_worker | success | response_chars=806
+2026-04-07 13:57:15 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | start | language=en | text_chars=802
+2026-04-07 13:57:15 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 13:58:32 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 13:59:51 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=18
+2026-04-07 13:59:51 | INFO     | Dummy-21 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=18 | history_turns=5
+2026-04-07 13:59:51 | INFO     | Dummy-21 | services.ai_service | ai.generate | start | language=en | user_chars=18 | history_turns=5 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 13:59:51 | INFO     | Dummy-21 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 13:59:51 | INFO     | Dummy-21 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=18
+2026-04-07 13:59:53 | INFO     | Dummy-21 | services.serper_search | serper_search | ok | query_chars=18 | out_chars=1194
+2026-04-07 13:59:53 | INFO     | Dummy-21 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=5
+2026-04-07 13:59:53 | INFO     | Dummy-21 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1334 | history_turns=5
+2026-04-07 14:00:09 | INFO     | Dummy-21 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=964
+2026-04-07 14:00:09 | INFO     | Dummy-21 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=964
+2026-04-07 14:00:09 | INFO     | Dummy-21 | workers.ai_worker | ai_worker | success | response_chars=964
+2026-04-07 14:00:09 | INFO     | Dummy-22 | workers.tts_worker | tts_worker | start | language=en | text_chars=766
+2026-04-07 14:00:09 | INFO     | Dummy-22 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 14:01:36 | INFO     | Dummy-22 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 14:55:03 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 14:55:08 | INFO     | MainThread | core.conversation | conversation.init | session_id=25a3be8439eb4d91ab37d8833fd61f15 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\25a3be8439eb4d91ab37d8833fd61f15.jsonl | max_turns_for_context=12
+2026-04-07 14:55:08 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 14:55:15 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=18
+2026-04-07 14:55:15 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=18 | history_turns=0
+2026-04-07 14:55:15 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=18 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 14:55:15 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 14:55:15 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-07 14:55:15 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-07 14:55:15 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=18 | history_turns=0
+2026-04-07 14:55:25 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=88
+2026-04-07 14:55:25 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=88
+2026-04-07 14:55:25 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=88
+2026-04-07 14:55:25 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=88
+2026-04-07 14:55:25 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 14:55:36 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 14:55:57 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=80
+2026-04-07 14:55:57 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=80 | history_turns=1
+2026-04-07 14:55:57 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=en | user_chars=80 | history_turns=1 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 14:55:57 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 14:55:57 | INFO     | Dummy-5 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=80
+2026-04-07 14:55:59 | INFO     | Dummy-5 | services.serper_search | serper_search | ok | query_chars=80 | out_chars=1560
+2026-04-07 14:55:59 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=1
+2026-04-07 14:55:59 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1762 | history_turns=1
+2026-04-07 14:56:10 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=678
+2026-04-07 14:56:10 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=678
+2026-04-07 14:56:10 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=678
+2026-04-07 14:56:10 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=en | text_chars=426
+2026-04-07 14:56:10 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 14:57:02 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:01:47 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=21
+2026-04-07 15:01:47 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=21 | history_turns=2
+2026-04-07 15:01:47 | INFO     | Dummy-9 | services.ai_service | ai.generate | start | language=en | user_chars=21 | history_turns=2 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 15:01:47 | INFO     | Dummy-9 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 15:01:47 | INFO     | Dummy-9 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=21
+2026-04-07 15:01:49 | INFO     | Dummy-9 | services.serper_search | serper_search | ok | query_chars=21 | out_chars=1245
+2026-04-07 15:01:49 | INFO     | Dummy-9 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=2
+2026-04-07 15:01:49 | INFO     | Dummy-9 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1388 | history_turns=2
+2026-04-07 15:02:02 | INFO     | Dummy-9 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=909
+2026-04-07 15:02:02 | INFO     | Dummy-9 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=909
+2026-04-07 15:02:02 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | success | response_chars=909
+2026-04-07 15:02:02 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | start | language=en | text_chars=809
+2026-04-07 15:02:02 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:15:26 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 15:15:28 | INFO     | MainThread | core.conversation | conversation.init | session_id=c4644b1904cb41c29e61803c8681c072 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\c4644b1904cb41c29e61803c8681c072.jsonl | max_turns_for_context=12
+2026-04-07 15:15:28 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 15:15:39 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=39
+2026-04-07 15:15:39 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=39 | history_turns=0
+2026-04-07 15:15:39 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=39 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 15:15:39 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 15:15:39 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=39
+2026-04-07 15:15:42 | INFO     | Dummy-1 | services.serper_search | serper_search | ok | query_chars=39 | out_chars=1314
+2026-04-07 15:15:42 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-07 15:15:42 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1475 | history_turns=0
+2026-04-07 15:15:52 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=499
+2026-04-07 15:15:52 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=499
+2026-04-07 15:15:52 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=499
+2026-04-07 15:15:52 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=318
+2026-04-07 15:15:52 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:16:34 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:20:38 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 15:20:40 | INFO     | MainThread | core.conversation | conversation.init | session_id=b1ce48aae6ce4facb8d90814d70a78c0 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\b1ce48aae6ce4facb8d90814d70a78c0.jsonl | max_turns_for_context=12
+2026-04-07 15:20:40 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 15:20:45 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=fi | normalized=en | text_chars=5
+2026-04-07 15:20:45 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=5 | history_turns=0
+2026-04-07 15:20:45 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=5 | history_turns=0 | priority=['groq', 'gemini']
+2026-04-07 15:20:45 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-07 15:20:45 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=0 | tools=web_search
+2026-04-07 15:20:45 | INFO     | Dummy-1 | services.ai_service | ai.groq | tool_round | round=1 | max=4
+2026-04-07 15:20:45 | INFO     | Dummy-1 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 15:20:45 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=groq | response_chars=474
+2026-04-07 15:20:45 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=474
+2026-04-07 15:20:45 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=473
+2026-04-07 15:20:45 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:21:31 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:26:21 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=37
+2026-04-07 15:26:21 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=37 | history_turns=1
+2026-04-07 15:26:21 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=en | user_chars=37 | history_turns=1 | priority=['groq', 'gemini']
+2026-04-07 15:26:21 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-07 15:26:21 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=1 | tools=web_search
+2026-04-07 15:26:21 | INFO     | Dummy-5 | services.ai_service | ai.groq | tool_round | round=1 | max=4
+2026-04-07 15:26:21 | INFO     | Dummy-5 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 15:26:21 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=groq | response_chars=47
+2026-04-07 15:26:21 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=47
+2026-04-07 15:26:21 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=en | text_chars=47
+2026-04-07 15:26:21 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:26:26 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:26:44 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=34
+2026-04-07 15:26:44 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=34 | history_turns=2
+2026-04-07 15:26:44 | INFO     | Dummy-9 | services.ai_service | ai.generate | start | language=en | user_chars=34 | history_turns=2 | priority=['groq', 'gemini']
+2026-04-07 15:26:44 | INFO     | Dummy-9 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-07 15:26:44 | INFO     | Dummy-9 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=2 | tools=web_search
+2026-04-07 15:26:44 | INFO     | Dummy-9 | services.ai_service | ai.groq | tool_round | round=1 | max=4
+2026-04-07 15:26:44 | INFO     | Dummy-9 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 15:26:47 | INFO     | Dummy-9 | services.serper_search | serper_search | ok | query_chars=24 | out_chars=1312
+2026-04-07 15:26:47 | INFO     | Dummy-9 | services.ai_service | ai.tool | provider=groq | tool=web_search | query_chars=24 | result_chars=1312
+2026-04-07 15:26:47 | INFO     | Dummy-9 | services.ai_service | ai.groq | tool_round | round=2 | max=4
+2026-04-07 15:26:48 | INFO     | Dummy-9 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 15:26:48 | INFO     | Dummy-9 | services.ai_service | ai.generate | complete | provider=groq | response_chars=105
+2026-04-07 15:26:48 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | success | response_chars=105
+2026-04-07 15:26:48 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | start | language=en | text_chars=105
+2026-04-07 15:26:48 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:27:03 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:27:07 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=21
+2026-04-07 15:27:07 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=21 | history_turns=3
+2026-04-07 15:27:07 | INFO     | Dummy-13 | services.ai_service | ai.generate | start | language=en | user_chars=21 | history_turns=3 | priority=['groq', 'gemini']
+2026-04-07 15:27:07 | INFO     | Dummy-13 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-07 15:27:07 | INFO     | Dummy-13 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=3 | tools=web_search
+2026-04-07 15:27:07 | INFO     | Dummy-13 | services.ai_service | ai.groq | tool_round | round=1 | max=4
+2026-04-07 15:27:08 | INFO     | Dummy-13 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 15:27:08 | INFO     | Dummy-13 | services.ai_service | ai.generate | complete | provider=groq | response_chars=75
+2026-04-07 15:27:08 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | success | response_chars=75
+2026-04-07 15:27:08 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | start | language=en | text_chars=75
+2026-04-07 15:27:08 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:27:15 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:27:18 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=23
+2026-04-07 15:27:18 | INFO     | Dummy-17 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=23 | history_turns=4
+2026-04-07 15:27:18 | INFO     | Dummy-17 | services.ai_service | ai.generate | start | language=en | user_chars=23 | history_turns=4 | priority=['groq', 'gemini']
+2026-04-07 15:27:18 | INFO     | Dummy-17 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-07 15:27:18 | INFO     | Dummy-17 | services.ai_service | ai.request | provider=groq | model=llama-3.1-8b-instant | context_turns=4 | tools=web_search
+2026-04-07 15:27:18 | INFO     | Dummy-17 | services.ai_service | ai.groq | tool_round | round=1 | max=4
+2026-04-07 15:27:18 | INFO     | Dummy-17 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 15:27:20 | INFO     | Dummy-17 | services.serper_search | serper_search | ok | query_chars=18 | out_chars=1152
+2026-04-07 15:27:20 | INFO     | Dummy-17 | services.ai_service | ai.tool | provider=groq | tool=web_search | query_chars=18 | result_chars=1152
+2026-04-07 15:27:20 | INFO     | Dummy-17 | services.ai_service | ai.groq | tool_round | round=2 | max=4
+2026-04-07 15:27:20 | INFO     | Dummy-17 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 15:27:22 | INFO     | Dummy-17 | services.serper_search | serper_search | ok | query_chars=18 | out_chars=1056
+2026-04-07 15:27:22 | INFO     | Dummy-17 | services.ai_service | ai.tool | provider=groq | tool=web_search | query_chars=18 | result_chars=1056
+2026-04-07 15:27:22 | INFO     | Dummy-17 | services.ai_service | ai.groq | tool_round | round=3 | max=4
+2026-04-07 15:27:22 | INFO     | Dummy-17 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-04-07 15:27:22 | INFO     | Dummy-17 | services.ai_service | ai.generate | complete | provider=groq | response_chars=39
+2026-04-07 15:27:22 | INFO     | Dummy-17 | workers.ai_worker | ai_worker | success | response_chars=39
+2026-04-07 15:27:22 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | start | language=en | text_chars=39
+2026-04-07 15:27:22 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:27:28 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:32:57 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 15:32:59 | INFO     | MainThread | core.conversation | conversation.init | session_id=2213487a497546d79b313531950792fb | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\2213487a497546d79b313531950792fb.jsonl | max_turns_for_context=12
+2026-04-07 15:32:59 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 15:33:17 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=70
+2026-04-07 15:33:17 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=70 | history_turns=0
+2026-04-07 15:33:17 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=70 | history_turns=0 | priority=['gemini']
+2026-04-07 15:33:17 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=gemini
+2026-04-07 15:33:17 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=0 | tools=web_search
+2026-04-07 15:33:17 | INFO     | Dummy-1 | services.ai_service | ai.gemini | tool_round | round=1 | max=4
+2026-04-07 15:33:19 | INFO     | Dummy-1 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-07 15:33:19 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=gemini | response_chars=69
+2026-04-07 15:33:19 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=69
+2026-04-07 15:33:19 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=69
+2026-04-07 15:33:19 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:33:27 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:33:42 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=48
+2026-04-07 15:33:42 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=48 | history_turns=1
+2026-04-07 15:33:42 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=en | user_chars=48 | history_turns=1 | priority=['gemini']
+2026-04-07 15:33:42 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=gemini
+2026-04-07 15:33:42 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=1 | tools=web_search
+2026-04-07 15:33:43 | INFO     | Dummy-5 | services.ai_service | ai.gemini | tool_round | round=1 | max=4
+2026-04-07 15:33:44 | INFO     | Dummy-5 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-07 15:33:46 | INFO     | Dummy-5 | services.serper_search | serper_search | ok | query_chars=30 | out_chars=1332
+2026-04-07 15:33:46 | INFO     | Dummy-5 | services.ai_service | ai.tool | provider=gemini | tool=web_search | query_chars=30 | result_chars=1332
+2026-04-07 15:33:46 | INFO     | Dummy-5 | services.ai_service | ai.gemini | tool_round | round=2 | max=4
+2026-04-07 15:33:50 | INFO     | Dummy-5 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-07 15:33:50 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=gemini | response_chars=983
+2026-04-07 15:33:50 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=983
+2026-04-07 15:33:50 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=en | text_chars=611
+2026-04-07 15:33:50 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:35:00 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:36:45 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=34
+2026-04-07 15:36:45 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=34 | history_turns=2
+2026-04-07 15:36:45 | INFO     | Dummy-9 | services.ai_service | ai.generate | start | language=en | user_chars=34 | history_turns=2 | priority=['gemini']
+2026-04-07 15:36:45 | INFO     | Dummy-9 | services.ai_service | ai.generate | try_provider | provider=gemini
+2026-04-07 15:36:45 | INFO     | Dummy-9 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=2 | tools=web_search
+2026-04-07 15:36:45 | INFO     | Dummy-9 | services.ai_service | ai.gemini | tool_round | round=1 | max=4
+2026-04-07 15:36:47 | INFO     | Dummy-9 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-07 15:36:49 | INFO     | Dummy-9 | services.serper_search | serper_search | ok | query_chars=21 | out_chars=1193
+2026-04-07 15:36:49 | INFO     | Dummy-9 | services.ai_service | ai.tool | provider=gemini | tool=web_search | query_chars=21 | result_chars=1193
+2026-04-07 15:36:49 | INFO     | Dummy-9 | services.ai_service | ai.gemini | tool_round | round=2 | max=4
+2026-04-07 15:36:52 | INFO     | Dummy-9 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-07 15:36:52 | INFO     | Dummy-9 | services.ai_service | ai.generate | complete | provider=gemini | response_chars=203
+2026-04-07 15:36:52 | INFO     | Dummy-9 | workers.ai_worker | ai_worker | success | response_chars=203
+2026-04-07 15:36:52 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | start | language=en | text_chars=157
+2026-04-07 15:36:52 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:37:22 | INFO     | Dummy-10 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:44:59 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=16
+2026-04-07 15:44:59 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=16 | history_turns=3
+2026-04-07 15:44:59 | INFO     | Dummy-13 | services.ai_service | ai.generate | start | language=en | user_chars=16 | history_turns=3 | priority=['gemini']
+2026-04-07 15:44:59 | INFO     | Dummy-13 | services.ai_service | ai.generate | try_provider | provider=gemini
+2026-04-07 15:44:59 | INFO     | Dummy-13 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=3 | tools=web_search
+2026-04-07 15:45:00 | INFO     | Dummy-13 | services.ai_service | ai.gemini | tool_round | round=1 | max=4
+2026-04-07 15:45:02 | INFO     | Dummy-13 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-07 15:45:02 | INFO     | Dummy-13 | services.ai_service | ai.generate | complete | provider=gemini | response_chars=457
+2026-04-07 15:45:02 | INFO     | Dummy-13 | workers.ai_worker | ai_worker | success | response_chars=457
+2026-04-07 15:45:02 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | start | language=en | text_chars=457
+2026-04-07 15:45:02 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 15:45:47 | INFO     | Dummy-14 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 15:46:47 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=59
+2026-04-07 15:46:47 | INFO     | Dummy-17 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=59 | history_turns=4
+2026-04-07 15:46:47 | INFO     | Dummy-17 | services.ai_service | ai.generate | start | language=en | user_chars=59 | history_turns=4 | priority=['gemini']
+2026-04-07 15:46:47 | INFO     | Dummy-17 | services.ai_service | ai.generate | try_provider | provider=gemini
+2026-04-07 15:46:47 | INFO     | Dummy-17 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=4 | tools=web_search
+2026-04-07 15:46:47 | INFO     | Dummy-17 | services.ai_service | ai.gemini | tool_round | round=1 | max=4
+2026-04-07 15:46:50 | INFO     | Dummy-17 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-07 15:46:52 | INFO     | Dummy-17 | services.serper_search | serper_search | ok | query_chars=45 | out_chars=1567
+2026-04-07 15:46:52 | INFO     | Dummy-17 | services.ai_service | ai.tool | provider=gemini | tool=web_search | query_chars=45 | result_chars=1567
+2026-04-07 15:46:52 | INFO     | Dummy-17 | services.ai_service | ai.gemini | tool_round | round=2 | max=4
+2026-04-07 15:46:55 | INFO     | Dummy-17 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-07 15:46:55 | INFO     | Dummy-17 | services.ai_service | ai.generate | complete | provider=gemini | response_chars=425
+2026-04-07 15:46:55 | INFO     | Dummy-17 | workers.ai_worker | ai_worker | success | response_chars=425
+2026-04-07 15:46:55 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | start | language=en | text_chars=407
+2026-04-07 15:46:55 | INFO     | Dummy-18 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 16:33:49 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 16:33:51 | INFO     | MainThread | core.conversation | conversation.init | session_id=57250dca42194003982686a54432c808 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\57250dca42194003982686a54432c808.jsonl | max_turns_for_context=12
+2026-04-07 16:33:51 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 16:34:01 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=50
+2026-04-07 16:34:01 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=50 | history_turns=0
+2026-04-07 16:34:01 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=50 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 16:34:01 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 16:34:01 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-07 16:34:01 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-07 16:34:01 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=50 | history_turns=0
+2026-04-07 16:34:09 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=354
+2026-04-07 16:34:09 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=354
+2026-04-07 16:34:09 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=354
+2026-04-07 16:34:09 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=354
+2026-04-07 16:34:09 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 16:34:43 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 16:34:53 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=34
+2026-04-07 16:34:53 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=34 | history_turns=1
+2026-04-07 16:34:53 | INFO     | Dummy-5 | services.ai_service | ai.generate | start | language=en | user_chars=34 | history_turns=1 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 16:34:53 | INFO     | Dummy-5 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 16:34:53 | INFO     | Dummy-5 | services.ai_service | ollama.augment | needs_search=yes | brave_query_chars=34
+2026-04-07 16:34:55 | INFO     | Dummy-5 | services.serper_search | serper_search | ok | query_chars=34 | out_chars=1198
+2026-04-07 16:34:55 | INFO     | Dummy-5 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=1
+2026-04-07 16:34:55 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=1354 | history_turns=1
+2026-04-07 16:35:02 | INFO     | Dummy-5 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=418
+2026-04-07 16:35:02 | INFO     | Dummy-5 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=418
+2026-04-07 16:35:02 | INFO     | Dummy-5 | workers.ai_worker | ai_worker | success | response_chars=418
+2026-04-07 16:35:02 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | start | language=en | text_chars=406
+2026-04-07 16:35:02 | INFO     | Dummy-6 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 16:56:48 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-07 16:56:50 | INFO     | MainThread | core.conversation | conversation.init | session_id=22eaad7daace411bab5ada1e72c49202 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\22eaad7daace411bab5ada1e72c49202.jsonl | max_turns_for_context=12
+2026-04-07 16:56:50 | INFO     | MainThread | services.tts_service | tts.availability | backends=gTTS, pyttsx3
+2026-04-07 16:56:58 | INFO     | MainThread | workers.stt_worker | stt_worker | loading_whisper | model=base | language=en
+2026-04-07 16:56:59 | INFO     | Dummy-1 | workers.stt_worker | stt_worker | record_start | duration_s=5 | sample_rate=16000 | samples=80000 | language=en
+2026-04-07 16:57:05 | INFO     | Dummy-1 | workers.stt_worker | stt_worker | transcribe_start | model=base
+2026-04-07 16:57:06 | INFO     | Dummy-1 | workers.stt_worker | stt_worker | transcribe_complete | text_chars=0
+2026-04-07 16:57:06 | WARNING  | Dummy-1 | workers.stt_worker | stt_worker | no_speech
+2026-04-07 16:57:19 | INFO     | MainThread | workers.stt_worker | stt_worker | loading_whisper | model=base | language=en
+2026-04-07 16:57:19 | INFO     | Dummy-3 | workers.stt_worker | stt_worker | record_start | duration_s=5 | sample_rate=16000 | samples=80000 | language=en
+2026-04-07 16:57:25 | INFO     | Dummy-3 | workers.stt_worker | stt_worker | transcribe_start | model=base
+2026-04-07 16:57:25 | INFO     | Dummy-3 | workers.stt_worker | stt_worker | transcribe_complete | text_chars=0
+2026-04-07 16:57:25 | WARNING  | Dummy-3 | workers.stt_worker | stt_worker | no_speech
+2026-04-07 16:57:33 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=fi | normalized=en | text_chars=5
+2026-04-07 16:57:33 | INFO     | Dummy-4 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=5 | history_turns=0
+2026-04-07 16:57:33 | INFO     | Dummy-4 | services.ai_service | ai.generate | start | language=en | user_chars=5 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 16:57:33 | INFO     | Dummy-4 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 16:57:33 | INFO     | Dummy-4 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-07 16:57:33 | INFO     | Dummy-4 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-07 16:57:33 | INFO     | Dummy-4 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=5 | history_turns=0
+2026-04-07 16:57:39 | INFO     | Dummy-4 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=124
+2026-04-07 16:57:39 | INFO     | Dummy-4 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=124
+2026-04-07 16:57:39 | INFO     | Dummy-4 | workers.ai_worker | ai_worker | success | response_chars=124
+2026-04-07 16:57:39 | INFO     | Dummy-5 | workers.tts_worker | tts_worker | start | language=en | text_chars=124
+2026-04-07 16:57:39 | INFO     | Dummy-5 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 16:57:52 | INFO     | Dummy-5 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav
+2026-04-07 16:58:03 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=60
+2026-04-07 16:58:03 | INFO     | Dummy-8 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=60 | history_turns=1
+2026-04-07 16:58:03 | INFO     | Dummy-8 | services.ai_service | ai.generate | start | language=en | user_chars=60 | history_turns=1 | priority=['ollama', 'groq', 'gemini']
+2026-04-07 16:58:03 | INFO     | Dummy-8 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-07 16:58:03 | INFO     | Dummy-8 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-07 16:58:03 | INFO     | Dummy-8 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=1
+2026-04-07 16:58:03 | INFO     | Dummy-8 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=60 | history_turns=1
+2026-04-07 16:58:22 | INFO     | Dummy-8 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=2013
+2026-04-07 16:58:22 | INFO     | Dummy-8 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=2013
+2026-04-07 16:58:22 | INFO     | Dummy-8 | workers.ai_worker | ai_worker | success | response_chars=2013
+2026-04-07 16:58:22 | INFO     | Dummy-9 | workers.tts_worker | tts_worker | start | language=en | text_chars=1933
+2026-04-07 16:58:22 | INFO     | Dummy-9 | workers.tts_worker | tts_worker | attempt | backend=gTTS
+2026-04-07 17:01:38 | INFO     | Dummy-9 | workers.tts_worker | tts_worker | success | backend=gTTS | path=ffmpeg_wav

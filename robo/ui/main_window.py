@@ -216,6 +216,7 @@ class PersonalAssistantUI(QMainWindow):
                 padding: 6px 10px;
             }
         """)
+        self.listen_button.setStyleSheet("background-color: #E74C3C;")
 
     # ---------------- Core Logic ---------------- #
 
@@ -322,7 +323,13 @@ class PersonalAssistantUI(QMainWindow):
     def speak_response(self, text):
         if self._shutting_down:
             return
+
         self.is_speaking = True
+
+        # 🔥 NEW UI FEEDBACK
+        self.status_label.setText("Assistant is speaking...")
+        self.listen_button.setEnabled(False)
+        self.send_button.setEnabled(False)
 
         self.tts_worker = TTSWorker(text, self.current_language)
         self.tts_worker.signals.finished.connect(self.on_tts_finished)
@@ -331,7 +338,13 @@ class PersonalAssistantUI(QMainWindow):
     def on_tts_finished(self):
         if self._shutting_down:
             return
+
         self.is_speaking = False
+
+        # 🔥 Restore UI
+        self.status_label.setText("Ready to assist you!")
+        self.listen_button.setEnabled(True)
+        self.send_button.setEnabled(True)
 
     def test_tts(self):
         msg = "TTS test successful." if self.current_language == 'en' else "テスト成功"
@@ -340,12 +353,21 @@ class PersonalAssistantUI(QMainWindow):
     # ---------------- STT ---------------- #
 
     def toggle_listening(self):
-        if self.is_listening or self.is_speaking:
+        if self.is_speaking:
             return
-        self.start_listening()
+
+        if self.is_listening:
+            # Stop listening state (UI only, worker will finish naturally)
+            self.is_listening = False
+            self.listen_button.setText("Start Listening")
+            self.status_label.setText("Stopped listening.")
+        else:
+            self.start_listening()
 
     def start_listening(self):
         self.is_listening = True
+        self.listen_button.setText("Listening...")
+        self.status_label.setText("Listening... Speak now.")
 
         self.stt_worker = STTWorker(language=self.current_language)
         self.stt_worker.signals.result.connect(self.on_speech_recognized)
@@ -360,6 +382,8 @@ class PersonalAssistantUI(QMainWindow):
 
     def on_stt_finished(self):
         self.is_listening = False
+        self.listen_button.setText("Start Listening")
+        self.status_label.setText("Ready to assist you!")
 
     # ---------------- Cleanup ---------------- #
 

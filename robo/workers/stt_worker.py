@@ -3,6 +3,8 @@ import logging
 from PyQt6.QtCore import QThread
 import sounddevice as sd
 import whisper
+from faster_whisper import WhisperModel
+
 
 from config.settings import SAMPLE_RATE, RECORD_DURATION
 from workers.base_signals import WorkerSignals
@@ -22,7 +24,11 @@ class STTWorker(QThread):
             self.WHISPER_MODEL,
             language,
         )
-        self.model = whisper.load_model(self.WHISPER_MODEL)
+        self.model = WhisperModel(
+            self.WHISPER_MODEL,
+            device="cpu",          # or "cuda" if GPU available
+            compute_type="int8"    # quantized = faster + less RAM on CPU
+        )
 
     def run(self):
         samples = int(RECORD_DURATION * SAMPLE_RATE)
@@ -45,8 +51,8 @@ class STTWorker(QThread):
             logger.debug("stt_worker | record_complete | audio_shape=%s", audio.shape)
 
             logger.info("stt_worker | transcribe_start | model=%s", self.WHISPER_MODEL)
-            result = self.model.transcribe(audio, fp16=False, language=self.language)
-            text = result.get("text", "").strip()
+            segments, info = self.model.transcribe(audio, language=self.language)
+            text = " ".join(seg.text for seg in segments).strip()
             logger.info("stt_worker | transcribe_complete | text_chars=%s", len(text))
 
             if text:
