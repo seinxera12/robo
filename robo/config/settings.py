@@ -18,7 +18,7 @@ OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3")  # or your preferred model
 
 GEMINI_MODEL = 'gemini-2.5-flash'
-GROQ_MODEL = 'llama-3.1-8b-instant'
+GROQ_MODEL = 'llama-3.1-70b-versatile'
 # API Keys
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 GROQ_API_KEY  = os.getenv('GROQ_API_KEY')

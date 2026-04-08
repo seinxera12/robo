@@ -261,7 +261,7 @@ class PersonalAssistantUI(QMainWindow):
             widget = self.chat_layout.itemAt(i).widget()
             if isinstance(widget, ChatBubble):
                 widget.deleteLater()
-
+            
         # start a fresh persisted session on clear
         self.conversation.clear(new_session=True)
 
@@ -379,7 +379,7 @@ class PersonalAssistantUI(QMainWindow):
             return
         self.add_chat_message(text, True)
         self.process_with_ai(text)
-
+    
     def on_stt_finished(self):
         self.is_listening = False
         self.listen_button.setText("Start Listening")

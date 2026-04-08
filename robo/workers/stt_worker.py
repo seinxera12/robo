@@ -2,7 +2,6 @@ import logging
 
 from PyQt6.QtCore import QThread
 import sounddevice as sd
-import whisper
 from faster_whisper import WhisperModel
 
 
