@@ -422,3 +422,5 @@ class PersonalAssistantUI(QMainWindow):
             self.tts_worker.wait(wait_ms)
 
         event.accept()
+
+        

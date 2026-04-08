@@ -1348,3 +1348,392 @@ ModuleNotFoundError: No module named 'jaconv'
 2026-04-08 15:52:49 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=Kokoro | device=cpu
 2026-04-08 15:52:49 | INFO     | Dummy-2 | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/voices/af_heart.pt "HTTP/1.1 302 Found"
 2026-04-08 15:53:46 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=Kokoro
+2026-04-08 16:34:13 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-08 16:34:15 | INFO     | MainThread | services.tts_service | tts.init | device=cpu
+2026-04-08 16:34:18 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-08 16:34:18 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/hexgrad/Kokoro-82M/f3ff3571791e39611d31c381e3a41a3af07b4987/config.json "HTTP/1.1 200 OK"
+2026-04-08 16:34:18 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-v1_0.pth "HTTP/1.1 302 Found"
+2026-04-08 16:34:19 | INFO     | MainThread | services.tts_service | tts.init | Kokoro pipeline loaded | lang=en | device=cpu
+2026-04-08 16:34:20 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-08 16:34:20 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/hexgrad/Kokoro-82M/f3ff3571791e39611d31c381e3a41a3af07b4987/config.json "HTTP/1.1 200 OK"
+2026-04-08 16:34:20 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-v1_0.pth "HTTP/1.1 302 Found"
+2026-04-08 16:34:21 | WARNING  | MainThread | services.tts_service | tts.init | Kokoro Japanese load failed | No module named 'jaconv'
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\tts_service.py", line 39, in <module>
+    KOKORO_PIPELINES["ja"] = KPipeline(lang_code="j", device=DEVICE)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\kokoro\pipeline.py", line 117, in __init__
+    self.g2p = ja.JAG2P()
+               ^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\misaki\ja.py", line 257, in __init__
+    from .cutlet import Cutlet
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\misaki\cutlet.py", line 9, in <module>
+    import jaconv
+ModuleNotFoundError: No module named 'jaconv'
+2026-04-08 16:34:21 | INFO     | MainThread | core.conversation | conversation.init | session_id=2f4bcc95cab8494c923cc177d5c70bc7 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\2f4bcc95cab8494c923cc177d5c70bc7.jsonl | max_turns_for_context=12
+2026-04-08 16:34:21 | INFO     | MainThread | services.tts_service | tts.availability | backends=Kokoro (en) [CPU], gTTS, pyttsx3
+2026-04-08 16:34:40 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=40
+2026-04-08 16:34:40 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=40 | history_turns=0
+2026-04-08 16:34:40 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=40 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-08 16:34:40 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-08 16:34:40 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-08 16:34:40 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-08 16:34:40 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=40 | history_turns=0
+2026-04-08 16:35:04 | WARNING  | Dummy-1 | services.ai_service | ai.generate | provider_failed | provider=ollama | error=Extra data: line 2 column 1 (char 129)
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 965, in json
+    return complexjson.loads(self.content.decode(encoding), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 341, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 2 column 1 (char 129)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 123, in generate
+    text = self._call_provider(provider, message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 59, in _call_provider
+    return self._ollama_with_search_augment(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 79, in _ollama_with_search_augment
+    return self._ollama_plain(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 69, in _ollama_plain
+    text = ollama_service.generate(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ollama_service.py", line 58, in generate
+    data = resp.json()
+           ^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 973, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Extra data: line 2 column 1 (char 129)
+2026-04-08 16:35:04 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-08 16:35:04 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=groq | model=llama-3.1-70b-versatile | context_turns=0 | tools=web_search
+2026-04-08 16:35:04 | INFO     | Dummy-1 | services.ai_service | ai.groq | tool_round | round=1 | max=4
+2026-04-08 16:35:04 | INFO     | Dummy-1 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 16:35:04 | WARNING  | Dummy-1 | services.ai_service | ai.generate | provider_failed | provider=groq | error=Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 123, in generate
+    text = self._call_provider(provider, message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 55, in _call_provider
+    return self._groq_with_tools(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 203, in _groq_with_tools
+    response = groq_client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\groq\resources\chat\completions.py", line 378, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-04-08 16:35:04 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=gemini
+2026-04-08 16:35:04 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=0 | tools=web_search
+2026-04-08 16:35:05 | INFO     | Dummy-1 | services.ai_service | ai.gemini | tool_round | round=1 | max=4
+2026-04-08 16:35:06 | INFO     | Dummy-1 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-04-08 16:35:06 | WARNING  | Dummy-1 | services.ai_service | ai.generate | provider_failed | provider=gemini | error=503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 123, in generate
+    text = self._call_provider(provider, message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 57, in _call_provider
+    return self._gemini_with_tools(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 354, in _gemini_with_tools
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\models.py", line 5985, in generate_content
+    return self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\models.py", line 4683, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\_api_client.py", line 1532, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\_api_client.py", line 1327, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\_api_client.py", line 1304, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\errors.py", line 186, in raise_error
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-04-08 16:35:06 | ERROR    | Dummy-1 | services.ai_service | ai.generate | all_providers_failed | priority=['ollama', 'groq', 'gemini'] | last_error=503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+NoneType: None
+2026-04-08 16:35:06 | ERROR    | Dummy-1 | workers.ai_worker | ai_worker | error | 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\workers\ai_worker.py", line 32, in run
+    result = self.service.generate(
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 147, in generate
+    raise last_error
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 123, in generate
+    text = self._call_provider(provider, message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 57, in _call_provider
+    return self._gemini_with_tools(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 354, in _gemini_with_tools
+    response = client.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\models.py", line 5985, in generate_content
+    return self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\models.py", line 4683, in _generate_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\_api_client.py", line 1532, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\_api_client.py", line 1327, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\tenacity\__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\_api_client.py", line 1304, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\errors.py", line 155, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\google\genai\errors.py", line 186, in raise_error
+    raise ServerError(status_code, response_json, response)
+google.genai.errors.ServerError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-04-08 16:36:15 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=nl | normalized=en | text_chars=2
+2026-04-08 16:36:15 | INFO     | Dummy-2 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=2 | history_turns=0
+2026-04-08 16:36:15 | INFO     | Dummy-2 | services.ai_service | ai.generate | start | language=en | user_chars=2 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-08 16:36:15 | INFO     | Dummy-2 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-08 16:36:15 | INFO     | Dummy-2 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-08 16:36:15 | INFO     | Dummy-2 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-08 16:36:15 | INFO     | Dummy-2 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=2 | history_turns=0
+2026-04-08 16:36:19 | WARNING  | Dummy-2 | services.ai_service | ai.generate | provider_failed | provider=ollama | error=Extra data: line 2 column 1 (char 133)
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 965, in json
+    return complexjson.loads(self.content.decode(encoding), **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 341, in decode
+    raise JSONDecodeError("Extra data", s, end)
+json.decoder.JSONDecodeError: Extra data: line 2 column 1 (char 133)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 123, in generate
+    text = self._call_provider(provider, message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 59, in _call_provider
+    return self._ollama_with_search_augment(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 79, in _ollama_with_search_augment
+    return self._ollama_plain(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 69, in _ollama_plain
+    text = ollama_service.generate(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ollama_service.py", line 58, in generate
+    data = resp.json()
+           ^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\requests\models.py", line 973, in json
+    raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
+requests.exceptions.JSONDecodeError: Extra data: line 2 column 1 (char 133)
+2026-04-08 16:36:19 | INFO     | Dummy-2 | services.ai_service | ai.generate | try_provider | provider=groq
+2026-04-08 16:36:19 | INFO     | Dummy-2 | services.ai_service | ai.request | provider=groq | model=llama-3.1-70b-versatile | context_turns=0 | tools=web_search
+2026-04-08 16:36:19 | INFO     | Dummy-2 | services.ai_service | ai.groq | tool_round | round=1 | max=4
+2026-04-08 16:36:19 | INFO     | Dummy-2 | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-04-08 16:36:19 | WARNING  | Dummy-2 | services.ai_service | ai.generate | provider_failed | provider=groq | error=Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 123, in generate
+    text = self._call_provider(provider, message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 55, in _call_provider
+    return self._groq_with_tools(message, history, user_info, language)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\robo\services\ai_service.py", line 203, in _groq_with_tools
+    response = groq_client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\groq\resources\chat\completions.py", line 378, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\groq\_base_client.py", line 1242, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\groq\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.BadRequestError: Error code: 400 - {'error': {'message': 'The model `llama-3.1-70b-versatile` has been decommissioned and is no longer supported. Please refer to https://console.groq.com/docs/deprecations for a recommendation on which model to use instead.', 'type': 'invalid_request_error', 'code': 'model_decommissioned'}}
+2026-04-08 16:36:19 | INFO     | Dummy-2 | services.ai_service | ai.generate | try_provider | provider=gemini
+2026-04-08 16:36:19 | INFO     | Dummy-2 | services.ai_service | ai.request | provider=gemini | model=gemini-2.5-flash | context_turns=0 | tools=web_search
+2026-04-08 16:36:20 | INFO     | Dummy-2 | services.ai_service | ai.gemini | tool_round | round=1 | max=4
+2026-04-08 16:36:21 | INFO     | Dummy-2 | httpx | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-04-08 16:36:21 | INFO     | Dummy-2 | services.ai_service | ai.generate | complete | provider=gemini | response_chars=32
+2026-04-08 16:36:21 | INFO     | Dummy-2 | workers.ai_worker | ai_worker | success | response_chars=32
+2026-04-08 16:36:21 | INFO     | Dummy-3 | workers.tts_worker | tts_worker | start | language=en | text_chars=32
+2026-04-08 16:36:21 | INFO     | Dummy-3 | workers.tts_worker | tts_worker | attempt | backend=Kokoro | device=cpu
+2026-04-08 16:36:21 | INFO     | Dummy-3 | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/voices/af_heart.pt "HTTP/1.1 302 Found"
+2026-04-08 16:36:25 | INFO     | Dummy-3 | workers.tts_worker | tts_worker | success | backend=Kokoro
+2026-04-08 16:37:08 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-08 16:37:10 | INFO     | MainThread | services.tts_service | tts.init | device=cpu
+2026-04-08 16:37:12 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-08 16:37:13 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/hexgrad/Kokoro-82M/f3ff3571791e39611d31c381e3a41a3af07b4987/config.json "HTTP/1.1 200 OK"
+2026-04-08 16:37:13 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-v1_0.pth "HTTP/1.1 302 Found"
+2026-04-08 16:37:14 | INFO     | MainThread | services.tts_service | tts.init | Kokoro pipeline loaded | lang=en | device=cpu
+2026-04-08 16:37:15 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-08 16:37:15 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/hexgrad/Kokoro-82M/f3ff3571791e39611d31c381e3a41a3af07b4987/config.json "HTTP/1.1 200 OK"
+2026-04-08 16:37:15 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-v1_0.pth "HTTP/1.1 302 Found"
+2026-04-08 16:37:16 | WARNING  | MainThread | services.tts_service | tts.init | Kokoro Japanese load failed | No module named 'jaconv'
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\tts_service.py", line 39, in <module>
+    KOKORO_PIPELINES["ja"] = KPipeline(lang_code="j", device=DEVICE)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\kokoro\pipeline.py", line 117, in __init__
+    self.g2p = ja.JAG2P()
+               ^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\misaki\ja.py", line 257, in __init__
+    from .cutlet import Cutlet
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\misaki\cutlet.py", line 9, in <module>
+    import jaconv
+ModuleNotFoundError: No module named 'jaconv'
+2026-04-08 16:37:17 | INFO     | MainThread | core.conversation | conversation.init | session_id=e99b0c57c6964d5d826aa07cc8ab67cd | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\e99b0c57c6964d5d826aa07cc8ab67cd.jsonl | max_turns_for_context=12
+2026-04-08 16:37:17 | INFO     | MainThread | services.tts_service | tts.availability | backends=Kokoro (en) [CPU], gTTS, pyttsx3
+2026-04-08 16:37:20 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=nl | normalized=en | text_chars=2
+2026-04-08 16:37:20 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=2 | history_turns=0
+2026-04-08 16:37:20 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=2 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-08 16:37:20 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-08 16:37:20 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-08 16:37:20 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-08 16:37:20 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=2 | history_turns=0
+2026-04-08 16:37:24 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=124
+2026-04-08 16:37:24 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=124
+2026-04-08 16:37:24 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=124
+2026-04-08 16:37:24 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=124
+2026-04-08 16:37:24 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=Kokoro | device=cpu
+2026-04-08 16:37:24 | INFO     | Dummy-2 | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/voices/af_heart.pt "HTTP/1.1 302 Found"
+2026-04-08 16:37:35 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=Kokoro
+2026-04-08 17:03:30 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=af | normalized=en | text_chars=5
+2026-04-08 17:03:30 | INFO     | Dummy-4 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=5 | history_turns=1
+2026-04-08 17:03:30 | INFO     | Dummy-4 | services.ai_service | ai.generate | start | language=en | user_chars=5 | history_turns=1 | priority=['ollama', 'groq', 'gemini']
+2026-04-08 17:03:30 | INFO     | Dummy-4 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-08 17:03:30 | INFO     | Dummy-4 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-08 17:03:30 | INFO     | Dummy-4 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=1
+2026-04-08 17:03:30 | INFO     | Dummy-4 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=5 | history_turns=1
+2026-04-08 17:03:36 | INFO     | Dummy-4 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=216
+2026-04-08 17:03:36 | INFO     | Dummy-4 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=216
+2026-04-08 17:03:36 | INFO     | Dummy-4 | workers.ai_worker | ai_worker | success | response_chars=216
+2026-04-08 17:03:36 | INFO     | Dummy-5 | workers.tts_worker | tts_worker | start | language=en | text_chars=216
+2026-04-08 17:03:36 | INFO     | Dummy-5 | workers.tts_worker | tts_worker | attempt | backend=Kokoro | device=cpu
+2026-04-08 17:03:52 | INFO     | Dummy-5 | workers.tts_worker | tts_worker | success | backend=Kokoro
+2026-04-08 17:04:10 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=87
+2026-04-08 17:04:10 | INFO     | Dummy-7 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=87 | history_turns=2
+2026-04-08 17:04:10 | INFO     | Dummy-7 | services.ai_service | ai.generate | start | language=en | user_chars=87 | history_turns=2 | priority=['ollama', 'groq', 'gemini']
+2026-04-08 17:04:10 | INFO     | Dummy-7 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-08 17:04:10 | INFO     | Dummy-7 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-08 17:04:10 | INFO     | Dummy-7 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=2
+2026-04-08 17:04:10 | INFO     | Dummy-7 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=87 | history_turns=2
+2026-04-08 17:04:18 | INFO     | Dummy-7 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=638
+2026-04-08 17:04:18 | INFO     | Dummy-7 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=638
+2026-04-08 17:04:18 | INFO     | Dummy-7 | workers.ai_worker | ai_worker | success | response_chars=638
+2026-04-08 17:04:18 | INFO     | Dummy-8 | workers.tts_worker | tts_worker | start | language=en | text_chars=634
+2026-04-08 17:04:18 | INFO     | Dummy-8 | workers.tts_worker | tts_worker | attempt | backend=Kokoro | device=cpu
+2026-04-08 17:05:02 | INFO     | Dummy-8 | workers.tts_worker | tts_worker | success | backend=Kokoro
+2026-04-08 17:18:26 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=da | normalized=en | text_chars=6
+2026-04-08 17:18:26 | INFO     | Dummy-10 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=6 | history_turns=3
+2026-04-08 17:18:26 | INFO     | Dummy-10 | services.ai_service | ai.generate | start | language=en | user_chars=6 | history_turns=3 | priority=['ollama', 'groq', 'gemini']
+2026-04-08 17:18:26 | INFO     | Dummy-10 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-08 17:18:26 | INFO     | Dummy-10 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-08 17:18:26 | INFO     | Dummy-10 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=3
+2026-04-08 17:18:26 | INFO     | Dummy-10 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=6 | history_turns=3
+2026-04-08 17:18:33 | INFO     | Dummy-10 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=282
+2026-04-08 17:18:33 | INFO     | Dummy-10 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=282
+2026-04-08 17:18:33 | INFO     | Dummy-10 | workers.ai_worker | ai_worker | success | response_chars=282
+2026-04-08 17:18:33 | INFO     | Dummy-11 | workers.tts_worker | tts_worker | start | language=en | text_chars=280
+2026-04-08 17:18:33 | INFO     | Dummy-11 | workers.tts_worker | tts_worker | attempt | backend=Kokoro | device=cpu
+2026-04-08 17:18:54 | INFO     | Dummy-11 | workers.tts_worker | tts_worker | success | backend=Kokoro
+2026-04-08 17:51:02 | INFO     | MainThread | core.logging_setup | logging configured | path=D:\ai\projects\personal_assistant\robo\logs\personal_assistant.log | level=INFO
+2026-04-08 17:51:04 | INFO     | MainThread | services.tts_service | tts.init | device=cpu
+2026-04-08 17:51:07 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-08 17:51:07 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/hexgrad/Kokoro-82M/f3ff3571791e39611d31c381e3a41a3af07b4987/config.json "HTTP/1.1 200 OK"
+2026-04-08 17:51:08 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-v1_0.pth "HTTP/1.1 302 Found"
+2026-04-08 17:51:09 | INFO     | MainThread | services.tts_service | tts.init | Kokoro pipeline loaded | lang=en | device=cpu
+2026-04-08 17:51:09 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-08 17:51:09 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/hexgrad/Kokoro-82M/f3ff3571791e39611d31c381e3a41a3af07b4987/config.json "HTTP/1.1 200 OK"
+2026-04-08 17:51:10 | INFO     | MainThread | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/kokoro-v1_0.pth "HTTP/1.1 302 Found"
+2026-04-08 17:51:10 | WARNING  | MainThread | services.tts_service | tts.init | Kokoro Japanese load failed | No module named 'jaconv'
+Traceback (most recent call last):
+  File "D:\ai\projects\personal_assistant\robo\services\tts_service.py", line 39, in <module>
+    KOKORO_PIPELINES["ja"] = KPipeline(lang_code="j", device=DEVICE)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\kokoro\pipeline.py", line 117, in __init__
+    self.g2p = ja.JAG2P()
+               ^^^^^^^^^^
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\misaki\ja.py", line 257, in __init__
+    from .cutlet import Cutlet
+  File "D:\ai\projects\personal_assistant\venv\Lib\site-packages\misaki\cutlet.py", line 9, in <module>
+    import jaconv
+ModuleNotFoundError: No module named 'jaconv'
+2026-04-08 17:51:11 | INFO     | MainThread | core.conversation | conversation.init | session_id=645af24cc7f541cb9290bb4f43db7cd0 | persist=True | path=D:\ai\projects\personal_assistant\robo\data\conversations\645af24cc7f541cb9290bb4f43db7cd0.jsonl | max_turns_for_context=12
+2026-04-08 17:51:11 | INFO     | MainThread | services.tts_service | tts.availability | backends=Kokoro (en) [CPU], gTTS, pyttsx3
+2026-04-08 17:51:24 | INFO     | MainThread | core.language | language.detect | ok | detected_raw=en | normalized=en | text_chars=33
+2026-04-08 17:51:25 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | thread_start | language=en | msg_chars=33 | history_turns=0
+2026-04-08 17:51:25 | INFO     | Dummy-1 | services.ai_service | ai.generate | start | language=en | user_chars=33 | history_turns=0 | priority=['ollama', 'groq', 'gemini']
+2026-04-08 17:51:25 | INFO     | Dummy-1 | services.ai_service | ai.generate | try_provider | provider=ollama
+2026-04-08 17:51:25 | INFO     | Dummy-1 | services.ai_service | ollama.augment | needs_search=no | path=plain
+2026-04-08 17:51:25 | INFO     | Dummy-1 | services.ai_service | ai.request | provider=ollama | model=qwen2.5:latest | context_turns=0
+2026-04-08 17:51:25 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | start | model=qwen2.5:latest | language=en | user_chars=33 | history_turns=0
+2026-04-08 17:51:40 | INFO     | Dummy-1 | services.ollama_service | ollama.generate | complete | model=qwen2.5:latest | response_chars=1364
+2026-04-08 17:51:40 | INFO     | Dummy-1 | services.ai_service | ai.generate | complete | provider=ollama | response_chars=1364
+2026-04-08 17:51:40 | INFO     | Dummy-1 | workers.ai_worker | ai_worker | success | response_chars=1364
+2026-04-08 17:51:40 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | start | language=en | text_chars=1317
+2026-04-08 17:51:40 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | attempt | backend=Kokoro | device=cpu
+2026-04-08 17:51:41 | INFO     | Dummy-2 | httpx | HTTP Request: HEAD https://huggingface.co/hexgrad/Kokoro-82M/resolve/main/voices/af_heart.pt "HTTP/1.1 302 Found"
+2026-04-08 17:51:54 | WARNING  | Dummy-2 | phonemizer | words count mismatch on 100.0% of the lines (1/1)
+2026-04-08 17:53:17 | INFO     | Dummy-2 | workers.tts_worker | tts_worker | success | backend=Kokoro

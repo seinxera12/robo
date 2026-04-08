@@ -1,4 +1,5 @@
 """Application-wide logging: rotating file under robo/logs/."""
+
 from __future__ import annotations
 
 import logging
@@ -51,3 +52,4 @@ def configure_logging(level: int = logging.INFO) -> None:
         path,
         logging.getLevelName(level),
     )
+
