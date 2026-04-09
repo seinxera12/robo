@@ -15,12 +15,13 @@ from config.settings import (
     OLLAMA_MODEL,
     WEB_SEARCH_OUTPUT_MAX_CHARS,
     BRAVE_SEARCH_API_KEY,
-    SERPER_API_KEY
+    SERPER_API_KEY,
+    VLLM_MODEL,
 )
 from services.ollama_service import OllamaService
+from services.vllm_service import VLLMService
 from services.brave_search import brave_web_search_compact
 from services.serper_search import serper_web_search_compact
-
 
 from services.web_search_tools import (
     WEB_SEARCH_TOOL_NAME,
@@ -37,6 +38,7 @@ logger = logging.getLogger(__name__)
 groq_client = Groq(api_key=GROQ_API_KEY)
 
 ollama_service = OllamaService()
+vllm_service = VLLMService()
 
 GROQ_HISTORY_TURNS = 12
 GEMINI_HISTORY_TURNS = 6
@@ -46,9 +48,9 @@ class AIService:
     PROVIDER_GROQ = "groq"
     PROVIDER_GEMINI = "gemini"
     PROVIDER_OLLAMA = "ollama"
-
-    PRIMARY_PROVIDER = "groq"
     FALLBACK_PROVIDER = "gemini"
+    PROVIDER_VLLM = "vllm"
+
 
     def _call_provider(self, provider: str, message, history, user_info, language) -> str:
         if provider == self.PROVIDER_GROQ:
@@ -57,7 +59,51 @@ class AIService:
             return self._gemini_with_tools(message, history, user_info, language)
         if provider == self.PROVIDER_OLLAMA:
             return self._ollama_with_search_augment(message, history, user_info, language)
+        if provider == self.PROVIDER_VLLM:                         
+            return self._vllm_with_search_augment(message, history, user_info, language)
         raise ValueError(f"Unknown provider: {provider}")
+    
+    def _vllm_plain(self, message, history, user_info, language) -> str:
+        logger.info(
+            "ai.request | provider=%s | model=%s | context_turns=%s",
+            self.PROVIDER_VLLM,
+            VLLM_MODEL,
+            min(len(history or []), 12),
+        )
+        text = vllm_service.generate(message, history, user_info, language)
+        logger.debug("ai.response | provider=%s | raw_received=yes", self.PROVIDER_VLLM)
+        return text
+
+    def _vllm_with_search_augment(self, message, history, user_info, language) -> str:
+        if not needs_search(message, history, language):
+            logger.info("vllm.augment | needs_search=no | path=plain")
+            return self._vllm_plain(message, history, user_info, language)
+
+        # if not BRAVE_SEARCH_API_KEY:
+        #     logger.warning("ollama.augment | needs_search=yes | skipped | missing BRAVE_SEARCH_API_KEY")
+        #     return self._ollama_plain(message, history, user_info, language)
+
+        if not SERPER_API_KEY:
+            logger.warning("vllm.augment | needs_search=yes | skipped | missing SERPER_API_KEY")
+            return self._vllm_plain(message, history, user_info, language)
+
+        query = (message or "").strip()
+        logger.info(
+            "vllm.augment | needs_search=yes | brave_query_chars=%s",
+            len(query),
+        )
+        block = serper_web_search_compact(query)
+        if not block:
+            block = "No web results returned."
+        if len(block) > WEB_SEARCH_OUTPUT_MAX_CHARS:
+            block = block[:WEB_SEARCH_OUTPUT_MAX_CHARS].rstrip() + "…"
+
+        augmented_message = (
+            "Use the web results below if they help answer the question. "
+            f"[Web results]\n{block}\n\n"
+            f"[User question]\n{query}"
+        )
+        return self._vllm_plain(augmented_message, history, user_info, language)
 
     def _ollama_plain(self, message, history, user_info, language) -> str:
         logger.info(

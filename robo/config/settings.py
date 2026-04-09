@@ -17,6 +17,10 @@ MODEL_PRIORITY = [p.strip().lower() for p in MODEL_PRIORITY if p.strip()]
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3")  # or your preferred model
 
+# vLLM
+VLLM_URL = os.getenv("VLLM_URL", "http://localhost:8000")
+VLLM_MODEL = os.getenv("VLLM_MODEL", "Qwen/Qwen2.5-3B-Instruct-AWQ")
+
 GEMINI_MODEL = 'gemini-2.5-flash'
 GROQ_MODEL = 'llama-3.1-70b-versatile'
 # API Keys
